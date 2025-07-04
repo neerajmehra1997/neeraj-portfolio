@@ -1,0 +1,561 @@
+/* --- Variables & Global Styles --- */
+:root {
+    --primary-color: #5a7d9a; /* Muted Blue-Grey - This will now be your main accent color */
+    --secondary-color: #333d47; /* Deep Charcoal for main text - Good for dark text */
+    --accent-color: #a67c52; /* A warm, sophisticated gold/bronze - Secondary accent */
+    --light-bg: #f5f5f5; /* OFF-WHITE / VERY LIGHT GREY - Perfect as is */
+    --dark-bg: #eeeeee; /* CHANGED: Was #2d3436 (Dark slate). Now a LIGHTER GREY for header/footer */
+    --text-color: #4a4a4a; /* Slightly lighter text for body - Good for light backgrounds */
+    --white: #ffffff; /* Pure white - used where you want true white */
+    --border-radius-sm: 5px;
+    --border-radius-md: 10px;
+    --box-shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08); /* Lighter shadow */
+    --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15); /* More pronounced on hover */
+    --transition-speed: 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif; /* Body text */
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: #FFFFFF; /* ALREADY WHITE - Perfect! */
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; /* Headings with serif */
+    color: var(--secondary-color); /* Deep Charcoal - Good on light backgrounds */
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+h1 { font-size: 3.5em; text-align: center; }
+h2 {
+    font-size: 2.8em;
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+    position: relative;
+}
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+h3 { font-size: 1.8em; }
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--primary-color); /* Muted blue-grey - Good accent color */
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--accent-color); /* Warm gold/bronze - Good hover accent */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all var(--transition-speed);
+    cursor: pointer;
+    border: none;
+    font-size: 0.95em;
+}
+
+.btn-primary {
+    background-color: var(--primary-color); /* Muted blue-grey - Good on white/light grey */
+    color: var(--white); /* White text on button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjusted shadow for light background */
+}
+
+.btn-primary:hover {
+    background-color: #4a6c86; /* SLIGHTLY DARKER PRIMARY - Adjusted for existing color */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Adjusted shadow */
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color); /* Deep Charcoal - Will look good on light backgrounds */
+    color: var(--white); /* White text on button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+}
+
+.btn-secondary:hover {
+    background-color: #23272b; /* Darker secondary */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Adjusted shadow */
+}
+
+.read-more {
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--primary-color);
+}
+
+.read-more:hover {
+    color: var(--accent-color);
+    transform: translateX(3px);
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+ background-color: var(--white); /* MODIFIED: Pure white background like the example */
+    color: var(--secondary-color); /* Keeps text dark for readability on white background */
+    padding: 1.8rem 0; /* MODIFIED: Increased vertical padding for more height (approx 28px top/bottom) */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* MODIFIED: Very subtle shadow, specific to the header */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.section {
+    /* Keep existing styles */
+    box-shadow: var(--box-shadow-light); /* Apply light shadow to sections */
+    margin-bottom: 30px; /* Re-introduce margin between sections for visual separation */
+}
+
+/* Featured & Book Items */
+.featured-item,
+.book-item,
+.blog-post-preview,
+.experience-item {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* Softer initial shadow */
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.featured-item:hover,
+.book-item:hover,
+.blog-post-preview:hover,
+.experience-item:hover {
+    transform: translateY(-5px); /* Consistent lift effect */
+    box-shadow: var(--box-shadow-hover); /* Deeper shadow on hover */
+}
+
+/* Profile Picture Shadow */
+.profile-pic {
+    /* ... existing styles ... */
+    /* Keep the border color as primary color if you like the accent */
+    /* border: 6px solid var(--primary-color); */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 0 0 10px rgba(255, 255, 255, 0.1); /* Deeper profile pic shadow */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color); /* Muted blue-grey - Remains as logo color */
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 35px;
+}
+
+.nav-links a {
+    color: var(--secondary-color); /* CHANGED: Nav links now dark for light header */
+    font-weight: 600;
+    padding: 8px 0;
+    position: relative;
+    font-size: 1.05em;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed);
+    border-radius: 2px;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Burger Menu (for mobile) */
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above everything */
+}
+
+.burger div {
+    background-color: var(--secondary-color); /* CHANGED: Burger lines now dark for light header */
+    width: 28px;
+    height: 3px;
+    margin: 6px;
+    transition: all var(--transition-speed);
+    border-radius: 2px;
+}
+
+/* --- Hero Section --- */
+/* KEEP AS IS: This section has a background image with an overlay, and is designed to be distinct. */
+/* Changing it to white/light grey might diminish its "hero" impact. */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('assets/images/background.jpg') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh; /* Take up most of the viewport height */
+    position: relative;
+}
+
+.hero-content {
+    max-width: 900px;
+    z-index: 1; /* Ensure content is above potential overlays */
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--primary-color);
+    margin-bottom: 25px;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.hero-section h1 {
+    font-size: 4em;
+    margin-bottom: 15px;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-section p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-links-hero {
+    margin-bottom: 30px;
+}
+
+.social-links-hero a {
+    color: var(--white);
+    font-size: 1.8em;
+    margin: 0 15px;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.social-links-hero a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* --- General Section Styling --- */
+.section {
+    padding: 80px 0;
+    margin-bottom: 0; /* Remove default margin for cleaner separation */
+    background-color: var(--white); /* Default section background */
+    box-shadow: var(--box-shadow);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.section:nth-of-type(even) { /* Apply different background to alternate sections */
+    background-color: var(--light-bg); /* ALREADY VERY LIGHT GREY - Perfect! */
+}
+
+/* --- Featured Content Section --- */
+.featured-content {
+    padding-top: 60px; /* Adjust padding for first content section */
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.featured-item {
+    background-color: var(--white); /* ALREADY WHITE - Perfect! */
+    padding: 30px;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.featured-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.featured-item h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    text-align: left; /* Override global h3 */
+}
+
+.featured-item h3 a {
+    color: var(--secondary-color);
+}
+.featured-item h3 a:hover {
+    color: var(--primary-color);
+}
+
+
+.featured-item .meta {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+/* --- Home About Section (optional small section on home page) --- */
+.home-about-section {
+    text-align: center;
+}
+
+.home-about-section p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1em;
+}
+
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--dark-bg); /* CHANGED: Now uses the new light grey */
+    color: var(--text-color); /* CHANGED: Text color for light footer */
+    padding: 60px 0 20px;
+    font-size: 0.95em;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: var(--primary-color); /* Muted blue-grey - Good accent for titles */
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    text-align: left; /* Override global h3 */
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: var(--text-color); /* CHANGED: Links now use body text color for light footer */
+    transition: color var(--transition-speed);
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-color);
+}
+
+.footer-section i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.social-links-footer a {
+    color: var(--secondary-color); /* CHANGED: Social links now dark for light footer */
+    font-size: 1.6em;
+    margin-right: 15px;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.social-links-footer a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* CHANGED: Border now dark for light footer */
+    margin-top: 20px;
+    color: var(--text-color); /* CHANGED: Text color for light footer */
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Mobile Navigation */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        background-color: var(--dark-bg); /* CHANGED: Mobile nav background now light grey */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding-top: 120px;
+        z-index: 999;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    }
+
+    .nav-links li {
+        opacity: 0;
+        margin: 25px 0;
+    }
+
+    .nav-links a {
+        color: var(--secondary-color); /* Ensure mobile nav links are dark too */
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger div {
+        background-color: var(--secondary-color); /* Ensure mobile burger is dark too */
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .nav-active .nav-links li {
+        animation: navLinkFade 0.5s ease forwards 0.3s;
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Adjust sections for mobile */
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2em; margin-bottom: 30px; }
+    h3 { font-size: 1.5em; }
+
+    .hero-section {
+        padding: 60px 15px;
+        min-height: 70vh;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.8em;
+    }
+
+    .hero-section p {
+        font-size: 1.1em;
+    }
+
+    .section {
+        padding: 50px 15px;
+    }
+
+    .featured-grid,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-section h3 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .footer-section p, .footer-section ul {
+        text-align: center;
+    }
+
+    .social-links-footer {
+        text-align: center;
+    }
+}
