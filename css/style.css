@@ -241,7 +241,11 @@ a:hover {
 /* KEEP AS IS: This section has a background image with an overlay, and is designed to be distinct. */
 /* Changing it to white/light grey might diminish its "hero" impact. */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('assets/images/background.jpg') no-repeat center center/cover;
+    background: url("../assets/images/pexels-pixabay-531880.jpg") no-repeat center center/cover;
+    background-repeat: no-repeat; /* Don't repeat */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Keeps image fixed during scroll */
+    background-size: cover;
     color: var(--white);
     text-align: center;
     padding: 100px 20px;
@@ -250,6 +254,7 @@ a:hover {
     align-items: center;
     min-height: 85vh; /* Take up most of the viewport height */
     position: relative;
+
 }
 
 .hero-content {
