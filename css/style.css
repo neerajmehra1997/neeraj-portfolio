@@ -129,7 +129,7 @@ a:hover {
 
 /* --- Header & Navigation --- */
 .main-header {
- background-color: var(--white); /* MODIFIED: Pure white background like the example */
+    background-color: var(--white); /* MODIFIED: Pure white background like the example */
     color: var(--secondary-color); /* Keeps text dark for readability on white background */
     padding: 1.8rem 0; /* MODIFIED: Increased vertical padding for more height (approx 28px top/bottom) */
     position: sticky;
