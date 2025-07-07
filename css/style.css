@@ -13,6 +13,10 @@
     --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15); /* More pronounced on hover */
     --transition-speed: 0.3s ease-in-out;
 }
+main {
+    flex: 1; /* Allow main to grow and fill available space */
+
+}
 
 * {
     margin: 0;
@@ -76,6 +80,7 @@ a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 25px;
+    flex-direction: column;
 }
 
 /* --- Buttons --- */
@@ -176,6 +181,12 @@ a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 25px;
+}
+
+.page-wrapper {
+display: flex;
+flex-direction: column;
+min-height:100vh;
 }
 
 .logo {
@@ -309,7 +320,7 @@ a:hover {
     margin-bottom: 0; /* Remove default margin for cleaner separation */
     background-color: var(--white); /* Default section background */
     box-shadow: var(--box-shadow);
-    border-bottom: 1px solid #e0e0e0;
+   // border-bottom: 1px solid #e0e0e0;
 }
 
 .section:nth-of-type(even) { /* Apply different background to alternate sections */
@@ -441,7 +452,7 @@ a:hover {
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1); /* CHANGED: Border now dark for light footer */
+   /* border-top: 1px solid rgba(0, 0, 0, 0.1); *//* CHANGED: Border now dark for light footer */
     margin-top: 20px;
     color: var(--text-color); /* CHANGED: Text color for light footer */
 }
