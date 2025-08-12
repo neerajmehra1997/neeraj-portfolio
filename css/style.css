@@ -259,7 +259,9 @@ min-height:100vh;
     text-align: center;
     padding: 100px 20px;
     display: flex;
-    justify-content: center;
+    justify-content: center;/rty;'
+
+    '
     align-items: center;
     min-height: 85vh; /* Take up most of the viewport height */
     position: relative;
@@ -295,6 +297,7 @@ min-height:100vh;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+
 }
 
 .social-links-hero {
@@ -322,8 +325,8 @@ min-height:100vh;
    // border-bottom: 1px solid #e0e0e0;
 }
 
-.section:nth-of-type(even) { /* Apply different background to alternate sections */
-    background-color: var(--light-bg); /* ALREADY VERY LIGHT GREY - Perfect! */
+.section:nth-of-type(even) {
+    background-color: var(--light-bg);
 }
 
 /* --- Featured Content Section --- */
